@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Registro</ion-title>
+    <ion-back-button slot="start"></ion-back-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="usuario" (ngSubmit)="registrar()">
+    <ion-card>
+      <ion-item>
+        <ion-label position="stacked">Ingresar rut:</ion-label>
+        <ion-input formControlName="rut" id="rut" type="text" placeholder="Ingrese rut"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Ingresar Nombre:</ion-label>
+        <ion-input formControlName="nombre" id="nombre" type="text" placeholder="Ingrese nombre"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Ingresar apellido:</ion-label>
+        <ion-input formControlName="ap_paterno" id="ap_paterno" type="text" placeholder="Ingrese apellido paterno">
+        </ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Ingresar fecha nacimiento:</ion-label>
+        <ion-input formControlName="fecha_nac" id="fecha_nac" type="date">
+        </ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Ingresar correo:</ion-label>
+        <ion-input formControlName="correo" id="correo" type="email" placeholder="Ingrese correo"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Clave</ion-label>
+        <ion-input formControlName="clave" id="clave" type="password" placeholder="Ingrese clave"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Repetir Clave</ion-label>
+        <ion-input [(ngModel)]="repetir_clave" [ngModelOptions]="{standalone: true}" id="repetir_clave" type="password"
+          placeholder="Ingrese clave nuevamente"></ion-input>
+      </ion-item>
+
+      <ion-button expand="full" type="submit" [disabled]="!usuario.valid">REGISTRAR</ion-button>
+      <ion-button expand="full" type="reset" color="terciary">LIMPIAR</ion-button>
+    
+    </ion-card>
+  </form>

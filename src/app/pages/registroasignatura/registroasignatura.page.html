@@ -1,0 +1,30 @@
+<ion-content>
+  <form [formGroup]="asignatura" (ngSubmit)="registrar()">
+    <ion-card>
+      <ion-item>
+        <ion-label position="stacked">Codigo de la asignatura:</ion-label>
+        <ion-input formControlName="cod_clase" id="cod_clase" type="text" placeholder="Ingrese codigo de la asignatura..."></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Nombre de la asignatura:</ion-label>
+        <ion-input formControlName="nombre_clase" id="nombre_clase" type="text" placeholder="Ingrese nombre de la asignatura..."></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Semestre :</ion-label>
+        <ion-input formControlName="semestre" id="semestre" type="text" placeholder="Ingrese semestre de la asignatura..."></ion-input>
+      </ion-item>
+      <div formGroupName="usuario">
+        <ion-item>
+          <ion-label position="stacked">Personas</ion-label>
+          <ion-select formControlName="nombre" id="nombre" type="text"  placeholder="Ingrese docente..." >
+            <ion-select-option  *ngFor="let u of usuarios" value="{{u.nombre}}" >{{u.nombre}} {{u.ap_paterno}} </ion-select-option>
+          </ion-select>
+        </ion-item>
+      </div>
+      <ion-button expand="full" type="submit" [disabled]="!asignatura.valid">REGISTRAR</ion-button>
+      <ion-button expand="full" type="reset" color="terciary">LIMPIAR</ion-button>
+    
+    </ion-card>
+  </form>
+  
+</ion-content>

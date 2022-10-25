@@ -1,0 +1,14 @@
+<ion-content>
+
+  <div>
+    <ion-card> 
+      <ngx-qrcode [elementType]="elementType" [value]="value"></ngx-qrcode>
+      <ion-input placeholder="Ingrese valor para el QR" [(ngModel)]="value" disabled="true"></ion-input>
+      <ion-button expand="full" (click)="generarCodigo()">Iniciar clase</ion-button>    
+    </ion-card>
+  </div>
+
+  
+
+
+</ion-content>

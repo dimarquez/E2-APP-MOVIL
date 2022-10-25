@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Recuperar</ion-title>
+    <ion-back-button slot="start"></ion-back-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  
+  <div>  
+    <ion-card>
+      <img src="../../../assets/img/Logo_DuocUC.svg.png" alt="logo-duoc" width="40%">
+      <ion-card-header>
+        <img src="../../../assets/img/user-login.png" alt="user-login">
+        <h1 class="centrar">Recuperar contraseña</h1>
+      </ion-card-header>
+      <ion-item>
+        <ion-input placeholder="Ingrese correo" type="email" [(ngModel)]="correo"></ion-input>
+      </ion-item>
+      <!--El comando .include('cadena'): busca que un texto contenga la cadena de texto indicada...
+        El disabled deshabilita el boton cuando el correo no incluye la cadena de texto: @duocuc.cl -->
+      <ion-button expand="block" (click)="recuperar()" [disabled]="!correo.includes('@duocuc.cl')">Recuperar</ion-button>
+    </ion-card>
+  </div>
+</ion-content>
